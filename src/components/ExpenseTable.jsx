@@ -17,6 +17,8 @@ function ExpenseTable({ expenses, searchTerm, setSearchTerm }) {
             <th>Category</th>
             <th>Amount</th>
             <th>Date</th>
+            <th>Actions</th>
+
           </tr>
         </thead>
         <tbody>
@@ -35,6 +37,9 @@ function ExpenseTable({ expenses, searchTerm, setSearchTerm }) {
                 <td>{expense.category}</td>
                 <td>{expense.amount}</td>
                 <td>{expense.date}</td>
+                <td>
+                  <button onClick={() => handleDelete(index)}>Delete</button>
+                </td>
               </tr>
             ))}
         </tbody>

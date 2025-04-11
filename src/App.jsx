@@ -25,6 +25,11 @@ function App() {
     setDate("");
   };
 
+  const handleDelete = (indexToDelete) => {
+    const updatedExpenses = expenses.filter((_, index) => index !== indexToDelete);
+    setExpenses(updatedExpenses);
+  };
+
   return (
     <div className="app-container">
       <h1>Expense Tracker</h1>
@@ -46,6 +51,7 @@ function App() {
           expenses={expenses}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
+          handleDelete={handleDelete}
         />
       </div>
     </div>

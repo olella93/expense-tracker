@@ -94,15 +94,23 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {expenses.map((expense, index) => (
-                <tr key={index}>
-                  <td>{expense.name}</td>
-                  <td>{expense.description}</td>
-                  <td>{expense.category}</td>
-                  <td>{expense.amount}</td>
-                  <td>{expense.date}</td>
-                </tr>
-              ))}
+              {expenses
+                .filter((expense) => {
+                  const term = searchTerm.toLowerCase();
+                  return (
+                    expense.name.toLowerCase().includes(term) ||
+                    expense.description.toLowerCase().includes(term)
+                  );
+                })
+                .map((expense, index) => (
+                  <tr key={index}>
+                    <td>{expense.name}</td>
+                    <td>{expense.description}</td>
+                    <td>{expense.category}</td>
+                    <td>{expense.amount}</td>
+                    <td>{expense.date}</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

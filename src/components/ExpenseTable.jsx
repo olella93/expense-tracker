@@ -1,6 +1,6 @@
 import React from "react";
 
-function ExpenseTable({ expenses, searchTerm, setSearchTerm }) {
+function ExpenseTable({ expenses, searchTerm, setSearchTerm, handleDelete }) {
   return (
     <div className="expense-table">
       <input

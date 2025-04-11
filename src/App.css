@@ -68,3 +68,16 @@
   border: 1px solid #ccc;
   text-align: left;
 }
+
+.expense-table button {
+  padding: 4px 10px;
+  background-color: rgb(15, 14, 14);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.expense-table button:hover {
+  background-color: #444;
+}

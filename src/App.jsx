@@ -20,11 +20,36 @@ const [date, setDate] = useState("");
         <div className="expense-form">
           <h2>Add Expense</h2>
           <form>
-            <input type="text" placeholder="Expense Name" />
-            <input type="text" placeholder="Description" />
-            <input type="text" placeholder="Category" />
-            <input type="number" placeholder="Amount" />
-            <input type="date" />
+          <input
+  type="text"
+  placeholder="Expense Name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
+<input
+  type="text"
+  placeholder="Description"
+  value={description}
+  onChange={(e) => setDescription(e.target.value)}
+/>
+<input
+  type="text"
+  placeholder="Category"
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+/>
+<input
+  type="number"
+  placeholder="Amount"
+  value={amount}
+  onChange={(e) => setAmount(e.target.value)}
+/>
+<input
+  type="date"
+  value={date}
+  onChange={(e) => setDate(e.target.value)}
+/>
+
             <button type="submit">Submit</button>
           </form>
         </div>

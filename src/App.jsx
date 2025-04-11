@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseTable from "./components/ExpenseTable";
 
 function App() {
-  // State variables
   const [expenses, setExpenses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [name, setName] = useState("");
@@ -11,22 +12,12 @@ function App() {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newExpense = {
-      name,
-      description,
-      category,
-      amount,
-      date,
-    };
-
-    // Add new expense to the list
+    const newExpense = { name, description, category, amount, date };
     setExpenses([...expenses, newExpense]);
 
-    // Clear form
     setName("");
     setDescription("");
     setCategory("");
@@ -38,82 +29,24 @@ function App() {
     <div className="app-container">
       <h1>Expense Tracker</h1>
       <div className="main-content">
-        {/* Left Side: Expense Form */}
-        <div className="expense-form">
-          <h2>Add Expense</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Expense Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-            <input
-              type="number"
-              placeholder="Amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-            />
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-
-        {/* Right Side: Expense Table */}
-        <div className="expense-table">
-          <input
-            type="text"
-            placeholder="Search expenses..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <table>
-            <thead>
-              <tr>
-                <th>Expense</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {expenses
-                .filter((expense) => {
-                  const term = searchTerm.toLowerCase();
-                  return (
-                    expense.name.toLowerCase().includes(term) ||
-                    expense.description.toLowerCase().includes(term)
-                  );
-                })
-                .map((expense, index) => (
-                  <tr key={index}>
-                    <td>{expense.name}</td>
-                    <td>{expense.description}</td>
-                    <td>{expense.category}</td>
-                    <td>{expense.amount}</td>
-                    <td>{expense.date}</td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-        </div>
+        <ExpenseForm
+          name={name}
+          description={description}
+          category={category}
+          amount={amount}
+          date={date}
+          setName={setName}
+          setDescription={setDescription}
+          setCategory={setCategory}
+          setAmount={setAmount}
+          setDate={setDate}
+          handleSubmit={handleSubmit}
+        />
+        <ExpenseTable
+          expenses={expenses}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
       </div>
     </div>
   );

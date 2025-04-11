@@ -5,6 +5,13 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+const [name, setName] = useState("");
+const [description, setDescription] = useState("");
+const [category, setCategory] = useState("");
+const [amount, setAmount] = useState("");
+const [date, setDate] = useState("");
+
+
   return (
     <div className="app-container">
       <h1>Expense Tracker</h1>

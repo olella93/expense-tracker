@@ -11,6 +11,28 @@ const [category, setCategory] = useState("");
 const [amount, setAmount] = useState("");
 const [date, setDate] = useState("");
 
+const handleSubmit = (e) => {
+  e.preventDefault(); 
+
+  const newExpense = {
+    name,
+    description,
+    category,
+    amount,
+    date,
+  };
+
+  // Add new expense to the list
+  setExpenses([...expenses, newExpense]);
+
+  // Clear form
+  setName("");
+  setDescription("");
+  setCategory("");
+  setAmount("");
+  setDate("");
+};
+
 
   return (
     <div className="app-container">

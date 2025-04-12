@@ -1,73 +1,133 @@
-.app-container {
-  padding: 20px;
+/* App.css */
+
+body {
   font-family: Arial, sans-serif;
-  background-color: rgb(232, 24, 24);
+  background-color: #e7c3c3;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #ea1414;
+  margin-bottom: 2rem;
 }
 
 .main-content {
   display: flex;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
+/* Left column - Form */
 .expense-form {
-  width: 300px;
+  flex: 1;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(237, 3, 3, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .expense-form h2 {
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: #d50e0e;
+  margin-bottom: 1rem;
+  color: #b92929;
 }
 
-.expense-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.expense-form form input,
+.expense-form form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.expense-form input,
-.expense-form button {
-  padding: 8px;
-  font-size: 14px;
+.expense-form form input:focus {
+  border-color: #e43939;
 }
 
-.expense-form button {
-  background-color: black;
+.expense-form form button {
+  background-color: #df2525;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-.expense-form button:hover {
-  background-color: #444;
+.expense-form form button:hover {
+  background-color: #b41818;
 }
 
+/* Right column - Table */
 .expense-table {
-  flex: 1;
+  flex: 2;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.expense-table input[type="text"] {
-  padding: 8px;
+.expense-table input {
   width: 100%;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
 }
 
-.expense-table table {
+.expense-table input:focus {
+  border-color: #4a90e2;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.expense-table th,
-.expense-table td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: left;
+thead {
+  background-color: #f0f4f8;
 }
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-weight: 600;
+  color: #444;
+}
+
+td {
+  color: #555;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e63939;
+}
+
 
 .expense-table button {
   padding: 4px 10px;

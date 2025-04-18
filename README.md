@@ -41,7 +41,7 @@ src/
 🧪 How to Use
 
 1. Clone the Repository
-git clone https://github.com/your-username/expense-tracker-react.git
+git clone https://github.com/olella93/expense-tracker-react.git
 cd expense-tracker-react
 
 2. Install Dependencies

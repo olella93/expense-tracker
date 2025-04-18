@@ -1,12 +1,55 @@
-# React + Vite
+# 💸 Expense Tracker App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and intuitive Expense Tracker built with React that allows users to:
 
-Currently, two official plugins are available:
+- Add new expenses
+- View and filter expenses
+- Delete unwanted entries
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app is ideal for personal finance tracking and beginner-level React practice!
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- **Add Expense** – Input name, description, category, amount, and date.
+- **Search Expenses** – Filter expenses in real time.
+- **Delete Expense** – Easily remove an expense from the list.
+- **Responsive UI** – Clean layout and styling using basic CSS.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** (useState)
+- **JavaScript**
+- **CSS** (Regular styling, no frameworks)
+- No backend – All data is stored in local state (disappears on refresh).
+
+---
+
+## 📁 Project Structure
+
+src/
+├── components/
+│   ├── ExpenseForm.jsx     # Form to add new expense
+│   └── ExpenseTable.jsx    # Displays and filters list of expenses
+├── App.jsx                 # Main component with state logic
+├── App.css                 # Styling
+├── index.css               # Global styles
+├── main.jsx                # Entry point to the React app
+🧪 How to Use
+
+1. Clone the Repository
+git clone https://github.com/your-username/expense-tracker-react.git
+cd expense-tracker-react
+
+2. Install Dependencies
+npm install
+
+3. Run the App
+npm start
+
+🧑‍💻 Author
+
+Made with ❤️ by Richard Olella
